@@ -17,8 +17,18 @@ const firebaseConfig = {
     measurementId: "G-28MMZRP17S"
 };
 
+const initializeAppIfNecessary = () => {
+  try {
+    return getApp()
+  } catch {
+    return initializeApp(firebaseConfig)
+  }
+}
+let app = initializeAppIfNecessary()
+const clientAuth = getAuth(app)
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+//const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 var Signals;
 var details = document.querySelector(".Details p");
