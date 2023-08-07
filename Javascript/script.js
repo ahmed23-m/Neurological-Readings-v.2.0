@@ -1,11 +1,9 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBTWBNR14dECgbNoxd5EZ2Z3BoIbk4_Q1k",
     authDomain: "aicontrol-3b183.firebaseapp.com",
@@ -17,19 +15,8 @@ const firebaseConfig = {
     measurementId: "G-28MMZRP17S"
 };
 
-const initializeAppIfNecessary = () => {
-  try {
-    return getApp()
-  } catch {
-    return initializeApp(firebaseConfig)
-  }
-}
-let app = initializeAppIfNecessary()
-const clientAuth = getAuth(app)
-
 // Initialize Firebase
-//const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
 var Signals;
 var details = document.querySelector(".Details p");
 
